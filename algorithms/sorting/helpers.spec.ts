@@ -1,5 +1,5 @@
 import assert from "assert";
-import {buildArray, isSorted} from "./helpers";
+import {buildArray, isSorted, swap} from "./helpers";
 
 describe('helpers', () => {
   describe('#buildArray', () => {
@@ -20,6 +20,15 @@ describe('helpers', () => {
 
     it('should return false', () => {
       assert.ok(!isSorted([1, 0]));
+    });
+  });
+
+  describe('#swap', () => {
+    it('should swap elements', () => {
+      const array = [0, 1, 2, 3, 4, 5, 6];
+      swap(array, 0, 6);
+      assert.ok(array[0] === 6);
+      assert.ok(array[6] === 0);
     });
   });
 });
